@@ -1,3 +1,22 @@
+/*
+Theme Name: My Website theme
+Text Domain: mywebsite
+Version: 1.0
+Description: Most basic custom theme in Wordpress.
+Author: Matthew Abraham
+License: GNU GPL2
+ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+@@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 /* 3rd party packages */
 
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
