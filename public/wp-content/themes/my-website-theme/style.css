@@ -16,3 +16,7 @@ html {
     scroll-behavior: auto;
   }
 }
+
+p {
+  color: orange;
+}
