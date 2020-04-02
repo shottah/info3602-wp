@@ -1,6 +1,7 @@
 # ignore everything in the root except the "public/wp-content" directory.
-!public/wp-content/
-!public/
+public/wp-admin
+public/wp-includes
+public/*.*
 
 # ignore everything in the "public/wp-content" directory, except:
 # "mu-plugins", "plugins", "themes" directory
