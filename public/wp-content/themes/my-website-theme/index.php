@@ -87,7 +87,7 @@ get_header( );
 </div>
 
 <div class="hero-slider">
-<div class="hero-slider__slide" style="background-image: url(images/bus.jpg);">
+<div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri( $file = 'images/bus.jpg' ) ?>);">
   <div class="hero-slider__interior container">
     <div class="hero-slider__overlay">
       <h2 class="headline headline--medium t-center">Free Transportation</h2>
@@ -96,7 +96,7 @@ get_header( );
     </div>
   </div>
 </div>
-<div class="hero-slider__slide" style="background-image: url(images/apples.jpg);">
+<div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri( $file = 'images/apples.jpg' ) ?>);">
   <div class="hero-slider__interior container">
     <div class="hero-slider__overlay">
       <h2 class="headline headline--medium t-center">An Apple a Day</h2>
@@ -105,7 +105,7 @@ get_header( );
     </div>
   </div>
 </div>
-<div class="hero-slider__slide" style="background-image: url(images/bread.jpg);">
+<div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri( $file = 'images/bread.jpg' ) ?>);">
   <div class="hero-slider__interior container">
     <div class="hero-slider__overlay">
       <h2 class="headline headline--medium t-center">Free Food</h2>
