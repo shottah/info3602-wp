@@ -19,6 +19,7 @@
             <?php
             wp_nav_menu(array('theme_location' => 'header_main_menu'));
              ?>
+             <!-- NAVIGATION MENU CONTENT -->
             <!-- <ul>
               <li><a href="<?php echo site_url($path = '/about-us') ?>">About Us</a></li>
               <li><a href="#">Programs</a></li>
@@ -26,6 +27,7 @@
               <li><a href="#">Campuses</a></li>
               <li><a href="#">Blog</a></li>
             </ul> -->
+            <!-- END NAVIGATION MENU -->
           </nav>
           <div class="site-header__util">
             <a href="#" class="btn btn--small btn--orange float-left push-right">Login</a>
