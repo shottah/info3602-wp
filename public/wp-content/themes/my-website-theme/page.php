@@ -41,7 +41,7 @@ if ($PAGE_PARENT or $PAGE_HAS_CHILD) {
    <div class="page-links">
      <h2 class="page-links__title"><a href="#"><?php echo the_title() ?></a></h2>
      <ul class="min-list">
-       <?php wp_list_pages(array('title_li' => NULL, 'child_of' => ($PAGE_PARENT) ? $PAGE_PARENT : get_the_id())); ?>
+       <?php wp_list_pages(array('title_li' => NULL, 'child_of' => ($PAGE_PARENT) ? $PAGE_PARENT : get_the_id(), 'sort_column' => 'rand')); ?>
      </ul>
    </div>
    <!-- END SIDEMENU -->
