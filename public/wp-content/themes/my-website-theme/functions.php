@@ -20,9 +20,18 @@ function university_files() {
   wp_enqueue_script('main-university-js', get_theme_file_uri('/js/scripts-bundled.js'), NULL, '1.0',true);
 }
 
+// This function changes some basic Wordpress functionality
+// by generating a unique title for each page.
+function university_features() {
+  // This will add the functionality of having a custom
+  // title on the browser's tab instead of a URI.
+  add_theme_support('title-tag');
+}
+
 // This wordpress hook is performing an action on any
 // file it expects to be "queued" for execution.
 // It accepts the type of action, and the function
 // to be executed.
 add_action( 'wp_enqueue_scripts', 'university_files');
+add_action( 'after_setup_theme', 'university_features');
  ?>
