@@ -26,6 +26,10 @@ function university_features() {
   // This will add the functionality of having a custom
   // title on the browser's tab instead of a URI.
   add_theme_support('title-tag');
+
+  // This will add a custom menu to the WP backend area
+  // and allow us to access new menus.
+  register_nav_menu('header_main_menu', 'Header Main Menu');
 }
 
 // This wordpress hook is performing an action on any
