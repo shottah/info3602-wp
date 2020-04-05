@@ -1,5 +1,5 @@
 <?php
-// This is the front page. 
+// This is the front page.
 
 // get_header() injects the code from the supplied
 // "header.php" file expected in the root directory.
@@ -56,7 +56,7 @@ get_header();
       $home_posts = new WP_Query(
         array(
           'posts_per_page' => 2,
-          'category_name' => 'Award',
+          'orderby' => 'rand',
         )
       );
 
