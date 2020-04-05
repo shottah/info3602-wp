@@ -28,7 +28,9 @@ get_header();
         array(
           'posts_per_page' => 2,
           'post_type' => 'event',
-          'orderby' => 'rand',
+          'meta_key' => 'event_date',
+          'orderby' => 'meta_value_num',
+          'order' => 'DSC',
         )
       );
       while ($home_posts->have_posts()):
