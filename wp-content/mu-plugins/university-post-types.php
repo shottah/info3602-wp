@@ -12,6 +12,7 @@ function university_post_types () {
       'singular_name' => 'Event',
     ),
     'menu_icon' => 'dashicons-calendar',
+    'supports' => array('title', 'editor', 'excerpt', 'custom-fields'),
   ));
 }
 
