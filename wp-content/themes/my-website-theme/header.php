@@ -3,7 +3,7 @@
 // on all template files in this theme.
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE html <?php language_attributes( $doctype = 'html' ) ?>>
 <html lang="en" dir="ltr">
   <head>
 
