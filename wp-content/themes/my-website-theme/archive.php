@@ -27,7 +27,7 @@ get_header(  );
         </a>
       </h2>
       <div class="metabox">
-        <p>Posted by <?php the_author( ) ?> on <?php the_time( $d = 'd M, Y' ) ?> in <?php echo get_the_category_list( $separator = ', ') ?></p>
+        <p>Posted by <?php the_author_posts_link(  ) ?> on <?php the_time( $d = 'd M, Y' ) ?> in <?php echo get_the_category_list( $separator = ', ') ?></p>
       </div>
       <div class="generic-centent">
         <p><?php the_excerpt() ?></p>
