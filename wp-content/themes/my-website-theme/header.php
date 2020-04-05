@@ -3,10 +3,12 @@
 // on all template files in this theme.
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE html <?php language_attributes( $doctype = 'html' ) ?>>
 <html lang="en" dir="ltr">
   <head>
-      <?php wp_head() ?>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php wp_head() ?>
   </head>
   <body>
     <header class="site-header">
