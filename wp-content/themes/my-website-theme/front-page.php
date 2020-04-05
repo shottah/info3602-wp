@@ -28,38 +28,27 @@ get_header();
         array(
           'posts_per_page' => 2,
           'category_name' => 'Award',
+          'orderby' => 'rand',
         )
       );
       while ($home_posts->have_posts()):
         $home_posts->the_post();
         global $post;
         ?>
-
+        <div class="event-summary">
+          <a class="event-summary__date t-center" href="<?php the_permalink( $post ); ?>">
+            <span class="event-summary__month"><?php the_time( $d = 'M' ); ?></span>
+            <span class="event-summary__day"><?php the_time( $d = 'd' ); ?></span>
+          </a>
+          <div class="event-summary__content">
+            <h5 class="event-summary__title headline headline--tiny"><a href="<?php the_permalink( $post ); ?>"><?php the_title(  ); ?></a></h5>
+            <p><?php echo wp_trim_words( get_the_content(  ), $num_words = 18); ?><a href="<?php the_permalink( $post ); ?>" class="nu gray">Learn more</a></p>
+          </div>
+        </div>
         <?php
-      endwhile
+      endwhile;
       ?>
-      <div class="event-summary">
-        <a class="event-summary__date t-center" href="#">
-          <span class="event-summary__month">Mar</span>
-          <span class="event-summary__day">25</span>
-        </a>
-        <div class="event-summary__content">
-          <h5 class="event-summary__title headline headline--tiny"><a href="#">Poetry in the 100</a></h5>
-          <p>Bring poems you&rsquo;ve wrote to the 100 building this Tuesday for an open mic and snacks. <a href="#" class="nu gray">Learn more</a></p>
-        </div>
-      </div>
-      <div class="event-summary">
-        <a class="event-summary__date t-center" href="#">
-          <span class="event-summary__month">Apr</span>
-          <span class="event-summary__day">02</span>
-        </a>
-        <div class="event-summary__content">
-          <h5 class="event-summary__title headline headline--tiny"><a href="#">Quad Picnic Party</a></h5>
-          <p>Live music, a taco truck and more can found in our third annual quad picnic day. <a href="#" class="nu gray">Learn more</a></p>
-        </div>
-      </div>
-
-      <p class="t-center no-margin"><a href="#" class="btn btn--blue">View All Events</a></p>
+      <p class="t-center no-margin"><a href="<?php echo site_url( $path = '/category/events', $scheme = null ) ?>" class="btn btn--blue">View All Events</a></p>
 
     </div>
   </div>
@@ -91,7 +80,7 @@ get_header();
           </div>
         </div>
         <?php
-        endwhile
+      endwhile;
         wp_reset_postdata();
       ?>
       <p class="t-center no-margin"><a href="<?php echo site_url( $path = '/blog' ); ?>" class="btn btn--yellow">View All Blog Posts</a></p>
