@@ -13,7 +13,18 @@ get_header(  );
   </div>
 </div>
 <div class="container container--narrow page-section">
-
+<?php
+  while(have_posts()):
+    the_post(); ?>
+    <a href="<?php the_permalink( $post ) ?>">
+      <?php the_title( ) ?>
+    </a>
+    <p>Posted by John on 6.8.17 in News</p>
+    <p><?php the_excerpt() ?></p>
+    <?php
+  endwhile;
+?>
+</div>
 <?php
 
 get_footer(  );
