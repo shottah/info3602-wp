@@ -28,6 +28,9 @@ get_header(  );
       <div class="generic-centent">
         <p><?php the_excerpt() ?></p>
       </div>
+      <p>
+        <a class="btn btn--blue" href="<?php the_permalink( $post ) ?>">Continue Reading &raquo;</a>
+      </p>
     </div>
     <?php
   endwhile;
