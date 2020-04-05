@@ -16,11 +16,19 @@ get_header(  );
 <?php
   while(have_posts()):
     the_post(); ?>
-    <a href="<?php the_permalink( $post ) ?>">
-      <?php the_title( ) ?>
-    </a>
-    <p>Posted by John on 6.8.17 in News</p>
-    <p><?php the_excerpt() ?></p>
+    <div class="post-item">
+      <h2>
+        <a href="<?php the_permalink( $post ) ?>">
+          <?php the_title( ) ?>
+        </a>
+      </h2>
+      <div class="metabox">
+        <p>Posted by John on 6.8.17 in News</p>
+      </div>
+      <div class="generic-centent">
+        <p><?php the_excerpt() ?></p>
+      </div>
+    </div>
     <?php
   endwhile;
 ?>
