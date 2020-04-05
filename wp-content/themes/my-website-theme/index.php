@@ -34,6 +34,7 @@ get_header(  );
     </div>
     <?php
   endwhile;
+  echo paginate_links(  );
 ?>
 </div>
 <?php
