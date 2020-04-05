@@ -27,7 +27,7 @@ get_header();
       $home_posts = new WP_Query(
         array(
           'posts_per_page' => 2,
-          'category_name' => 'Award',
+          'post_type' => 'event',
           'orderby' => 'rand',
         )
       );
@@ -42,7 +42,7 @@ get_header();
           </a>
           <div class="event-summary__content">
             <h5 class="event-summary__title headline headline--tiny"><a href="<?php the_permalink( $post ); ?>"><?php the_title(  ); ?></a></h5>
-            <p><?php echo wp_trim_words( get_the_content(  ), $num_words = 18); ?><a href="<?php the_permalink( $post ); ?>" class="nu gray">Learn more</a></p>
+            <p><?php echo wp_trim_words( get_the_content(  ), $num_words = 18); ?> <a href="<?php the_permalink( $post ); ?>" class="nu gray">Learn more</a></p>
           </div>
         </div>
         <?php
@@ -74,9 +74,7 @@ get_header();
           </a>
           <div class="event-summary__content">
             <h5 class="event-summary__title headline headline--tiny"><a href="<?php the_permalink( $post ) ?>"><?php the_title(  ); ?></a></h5>
-            <p><?php echo wp_trim_words( get_the_content(  ), $num_words = 18); ?>
-              <a href="<?php the_permalink( $post ) ?>" class="nu gray">Read more</a>
-            </p>
+            <p><?php echo wp_trim_words( get_the_content(  ), $num_words = 18); ?> <a href="<?php the_permalink( $post ) ?>" class="nu gray">Read more</a></p>
           </div>
         </div>
         <?php
