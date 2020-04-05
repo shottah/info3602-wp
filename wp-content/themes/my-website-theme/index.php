@@ -23,7 +23,7 @@ get_header(  );
         </a>
       </h2>
       <div class="metabox">
-        <p>Posted by John on 6.8.17 in News</p>
+        <p>Posted by <?php the_author( ) ?> on <?php the_time( $d = 'd M, Y' ) ?> in <?php echo get_the_category_list( $separator = ', ') ?></p>
       </div>
       <div class="generic-centent">
         <p><?php the_excerpt() ?></p>
