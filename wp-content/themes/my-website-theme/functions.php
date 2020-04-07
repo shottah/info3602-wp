@@ -18,7 +18,7 @@ function university_files() {
   // The following will activate javascript code that
   // is required for various elements on the website
   // such as the slider on the homepage.
-  wp_enqueue_script('main-university-js', get_theme_file_uri('/js/scripts-bundled.js'), NULL, '1.0',true);
+  wp_enqueue_script('main-university-js', get_theme_file_uri('/js/scripts-bundled.js'), array('jquery'), '1.0',true);
 }
 
 // This function changes some basic Wordpress functionality
