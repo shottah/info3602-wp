@@ -34,6 +34,28 @@
     <div class="generic-content">
       <?php the_content(  ) ?>
     </div>
+
+    <div class="container">
+      <hr class="section-break">
+      <h2 class="headline headline--medium">Related Program(s)</h2>
+      <ul class="link-list min-list">
+
+        <?php
+        $related_programs = get_field('event_programs');
+        if ($related_programs):
+          foreach ($related_programs as $program):
+            ?>
+            <li>
+              <a href="<?php echo get_the_permalink( $program ) ?>">
+                <?php echo get_the_title( $program ) ?>
+              </a>
+            </li>
+            <?php
+          endforeach;
+        endif;
+        ?>
+      </ul>
+    </div>
   </div>
   <?php
   endwhile
