@@ -32,6 +32,18 @@ function university_features() {
   register_nav_menu('header_main_menu', 'Header Main Menu');
 }
 
+// This function overrides the builtin WP_Query default
+// functionality.
+function university_adjust_program_queries($query) {
+  if (!is_admin() AND is_post_type_archive( $post_types = 'program' )
+    AND $query->is_main_query()):
+    $query->set('orderby', 'title');
+    $query->set('order', 'ASC');
+    $query->set('posts_per_page', -1);
+  endif;
+  wp_reset_postdata();
+}
+
 // This wordpress hook is performing an action on any
 // file it expects to be "queued" for execution.
 // It accepts the type of action, and the function
