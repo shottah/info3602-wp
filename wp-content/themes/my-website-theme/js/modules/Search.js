@@ -12,7 +12,6 @@ export default class Search {
   }
 
   openOverlay () {
-    console.log(true);
     this.overlay.addClass('search-overlay--active');
   }
 
