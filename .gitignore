@@ -22,3 +22,8 @@ node_modules/
 *.log
 *.sql
 *.sqlite
+
+!settings.js
+!gulpfile.js
+!package.json
+!webpack.config.js
