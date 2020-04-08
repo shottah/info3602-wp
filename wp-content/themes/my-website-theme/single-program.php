@@ -36,6 +36,41 @@
     </div>
 
     <div class="container">
+      <?php
+      $related_professors = new WP_Query(
+          array(
+            'posts_per_page' => -1,
+            'post_type' => 'professor',
+            'orderby' => 'title',
+            'order' => 'ASC',
+            'meta_query' => array(
+              array(
+                'key' => 'professor_programs',
+                'compare' => 'LIKE',
+                'value' => '"'. get_the_id().'"',
+              ), // meta_query[0]: get professors who's programs match $post
+            ), // meta_query
+          ) // wp_query array
+      );
+      if ($related_professors->have_posts()):
+        ?>
+        <hr class="section-break">
+          <h2 class="headline headline--medium"><?php the_title( ) . 'Professors'?></h2>
+          <?php
+          while($related_professors->have_posts()):
+            $related_professors->the_post();
+            ?>
+            <li>
+              <a href="<?php esc_url( the_permalink( $post ) ) ?>"><?php echo get_the_title( $post ); ?></a>
+            </li>
+            <?php
+          endwhile;
+      endif;
+      wp_reset_postdata();
+      ?>
+    </div>
+
+    <div class="container">
       <hr class="section-break">
       <h2 class="headline headline--medium">Related <?php the_title(  ) ?> Event(s)</h2>
         <?php
@@ -75,13 +110,12 @@
             <?php
           endwhile; // while have related event posts
         endif; // if have related event posts
+        wp_reset_postdata();
         ?>
     </div>
   </div>
   <?php
 endwhile; // while have post data
-wp_reset_postdata();
-echo paginate_links(  );
 ?>
 <?php
   get_footer(  );
