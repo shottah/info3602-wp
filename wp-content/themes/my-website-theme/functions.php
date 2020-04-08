@@ -62,14 +62,23 @@ function university_adjust_program_queries($query) {
 add_action( 'wp_enqueue_scripts', 'university_files');
 add_action( 'after_setup_theme', 'university_features');
 
-function theme_page_banner ( ) {
+function theme_page_banner ( $args=null ) {
+  if (!$args['title']) $args['title'] = get_the_title();
+  if (!$args['subtitle']) $args['subtitle'] = get_field('page_banner_subtitle');
+  if (!$args['banner']):
+    if (get_field('page_banner_background_image')):
+      $args['banner'] = get_field('page_banner_background_image')['sizes']['page_banner'];
+    else:
+      $args['banner'] = get_theme_file_uri( $file = '/images/ocean.jpg' );
+    endif;
+  endif;
   ?>
   <div class="page-banner">
-    <div class="page-banner__bg-image" style="background-image: url(<?php echo get_field('page_banner_background_image')['sizes']['page_banner']; ?> );"></div>
+    <div class="page-banner__bg-image" style="background-image: url(<?php echo $args['banner']; ?> );"></div>
       <div class="page-banner__content container container--narrow">
-        <h1 class="page-banner__title"> <?php the_title() ?> </h1>
+        <h1 class="page-banner__title"> <?php echo $args['title'] ?> </h1>
       <div class="page-banner__intro">
-        <p><?php the_field('page_banner_subtitle'); ?></p>
+        <p><?php echo $args['subtitle'] ?></p>
       </div>
     </div>
   </div>
