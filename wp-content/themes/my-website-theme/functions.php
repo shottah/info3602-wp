@@ -35,6 +35,11 @@ function university_features() {
   // This will add a the ability to create a 1:1 relationship
   // between a featured image or thumbnail and the post.
   add_theme_support( 'post-thumbnails');
+
+  // This will add support for multiple image sizes for
+  // Wordpress to use when saving images.
+  add_image_size( 'professor_landscape', 400, 250, $crop = true );
+  add_image_size( 'professor_portrait', 480, 650, $crop = true );
 }
 
 // This function overrides the builtin WP_Query default
