@@ -34,7 +34,7 @@ function university_features() {
 
   // This will add a the ability to create a 1:1 relationship
   // between a featured image or thumbnail and the post.
-  add_theme_support( 'post_thumbnail');
+  add_theme_support( 'post-thumbnails');
 }
 
 // This function overrides the builtin WP_Query default
