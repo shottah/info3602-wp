@@ -41,7 +41,7 @@ function university_post_types () {
       'all_items' => 'All Professors',
       'singular_name' => 'Professor',
     ),
-    'menu_icon' => 'dashicons-admin-site-alt3',
+    'menu_icon' => 'dashicons-businessperson',
     'supports' => array('title', 'editor', 'excerpt', 'custom-fields'),
     'rewrite' => array('slug' => 'professors'),
     'has_archive' => true,
