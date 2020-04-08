@@ -40,6 +40,7 @@ function university_features() {
   // Wordpress to use when saving images.
   add_image_size( 'professor_landscape', 400, 250, $crop = true );
   add_image_size( 'professor_portrait', 480, 650, $crop = true );
+  add_image_size( 'page_banner', 1500, 350, true);
 }
 
 // This function overrides the builtin WP_Query default
