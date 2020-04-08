@@ -31,6 +31,10 @@ function university_features() {
   // This will add a custom menu to the WP backend area
   // and allow us to access new menus.
   register_nav_menu('header_main_menu', 'Header Main Menu');
+
+  // This will add a the ability to create a 1:1 relationship
+  // between a featured image or thumbnail and the post.
+  add_theme_support( 'post_thumbnail');
 }
 
 // This function overrides the builtin WP_Query default

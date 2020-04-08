@@ -42,7 +42,7 @@ function university_post_types () {
       'singular_name' => 'Professor',
     ),
     'menu_icon' => 'dashicons-businessperson',
-    'supports' => array('title', 'editor', 'excerpt', 'custom-fields'),
+    'supports' => array('title', 'editor', 'custom-fields', 'thumbnail'),
     'rewrite' => array('slug' => 'professors'),
     'has_archive' => true,
   ));
