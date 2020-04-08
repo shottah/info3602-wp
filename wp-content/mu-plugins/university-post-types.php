@@ -31,6 +31,21 @@ function university_post_types () {
     'rewrite' => array('slug' => 'programs'),
     'has_archive' => true,
   ));
+
+  register_post_type( 'professor', array(
+    'public' => true,
+    'labels' => array(
+      'name' => 'Professors',
+      'add_new_item' => 'Add New Professor',
+      'edit_item' => 'Edit Professor',
+      'all_items' => 'All Professors',
+      'singular_name' => 'Professor',
+    ),
+    'menu_icon' => 'dashicons-businessperson',
+    'supports' => array('title', 'editor', 'custom-fields', 'thumbnail'),
+    'rewrite' => array('slug' => 'professors'),
+    'has_archive' => true,
+  ));
 }
 
 ?>
