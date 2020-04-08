@@ -56,15 +56,21 @@
         ?>
         <hr class="section-break">
           <h2 class="headline headline--medium"><?php the_title( ) . 'Professors'?></h2>
-          <?php
-          while($related_professors->have_posts()):
-            $related_professors->the_post();
+          <ul class="professor-cards">
+            <?php while($related_professors->have_posts()):
+              $related_professors->the_post();
+              ?>
+              <li class="professor-card__list-item">
+                <a class="professor-card" href="<?php the_permalink();?>">
+                  <img class="professor-card__image" src="<?php the_post_thumbnail_url('professor_landscape');?>"/>
+                  <span class="professor-card__name"> <?php the_title(); ?></span>
+                </a>
+              </li>
+              <?php
+            endwhile;
             ?>
-            <li>
-              <a href="<?php esc_url( the_permalink( $post ) ) ?>"><?php echo get_the_title( $post ); ?></a>
-            </li>
-            <?php
-          endwhile;
+          </ul>
+          <?php
       endif;
       wp_reset_postdata();
       ?>
