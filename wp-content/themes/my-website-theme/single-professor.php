@@ -21,7 +21,14 @@
 
   <div class="container container--narrow page-section">
     <div class="generic-content">
-      <?php the_content(  ) ?>
+      <div class="row group">
+        <div class="one-third">
+          <?php the_post_thumbnail(  ); ?>
+        </div>
+        <div class="two-thirds">
+          <?php the_content( $more_link_text = null, $strip_teaser = false ) ?>
+        </div>
+      </div>
     </div>
 
     <div class="container">
