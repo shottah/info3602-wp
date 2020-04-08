@@ -30,7 +30,7 @@
       <ul class="link-list min-list">
 
         <?php
-        $related_programs = get_field('event_programs');
+        $related_programs = get_field('professor_programs');
         if ($related_programs):
           foreach ($related_programs as $program):
             ?>
