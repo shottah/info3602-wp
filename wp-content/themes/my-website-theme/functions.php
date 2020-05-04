@@ -85,4 +85,26 @@ function theme_page_banner ( $args=null ) {
   <?php
 }
 
+add_action('admin_init', 'redirect_from_admin');
+function redirect_from_admin () {
+  $user = wp_get_current_user();
+  $userroles = count($user->roles);
+  $role = $user->roles[0];
+  if ($userroles == 1 && $role == 'subscriber') {
+    wp_safe_redirect(site_url('/'), $status=302);
+    exit;
+  }
+}
+
+add_action('wp_loaded', 'hide_admin_bar');
+function hide_admin_bar () {
+  $user = wp_get_current_user();
+  $userroles = count($user->roles);
+  $role = $user->roles[0];
+  if ($userroles == 1 && $role == 'subscriber') {
+    show_admin_bar($show=false);
+  }
+}
+
+
  ?>
