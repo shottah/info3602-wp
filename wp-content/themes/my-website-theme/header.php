@@ -32,8 +32,14 @@
             <!-- END NAVIGATION MENU -->
           </nav>
           <div class="site-header__util">
+          <?php
+            if (!is_user_logged_in()):
+              ?>
             <a href="<?php echo esc_url(site_url('/wp-login.php')) ?>" class="btn btn--small btn--orange float-left push-right">Login</a>
             <a href="<?php echo esc_url(site_url('/wp-signup.php')) ?>" class="btn btn--small  btn--dark-orange float-left">Sign Up</a>
+              <?php
+              endif;
+              ?>
             <span class="search-trigger js-search-trigger"><i class="fa fa-search" aria-hidden="true"></i></span>
           </div>
         </div>
